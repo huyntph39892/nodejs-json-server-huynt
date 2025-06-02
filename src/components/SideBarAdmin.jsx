@@ -33,6 +33,10 @@ const MenuItem = styled.div`
   transition: opacity 0.2s ease, font-size 0.2s ease;
 `;
 
+// const NavLink = styled.a`
+//   text-decoration: none;
+// `;
+
 const SiderBarAdmin = ({ collapsed, onToggle }) => {
   return (
     <SidebarWrapper collapsed={collapsed}>

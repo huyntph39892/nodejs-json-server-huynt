@@ -31,10 +31,10 @@ const clientRoutes = [
   { path: "blogs/:id", element: <BlogDetailPage /> },
 
   //*User Routes
-  { path: "profile/me.:id", element: <ProfilePage /> },
+  { path: "profile/me/:id", element: <ProfilePage /> },
   { path: "profile/orders", element: <OrderListPage /> },
   { path: "profile/orders/:id", element: <OrderDetailPage /> },
-  { path: "profile/wislist", element: <WishListPage /> },
+  { path: "profile/wishlist", element: <WishListPage /> },
 ];
 
 export default clientRoutes;

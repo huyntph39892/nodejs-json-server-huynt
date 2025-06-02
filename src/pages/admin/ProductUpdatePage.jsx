@@ -1,34 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { createProduct } from "../../api/productApi";
-import FormCommon from "../../components/FormCommon";
+import { useParams, useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { productSchema } from "../../validations/productSchema";
+import { getProductById, updateProduct } from "../../api/productApi";
+import FormCommon from "../../components/FormCommon";
 import { toast } from "react-toastify";
-import { Link } from "react-router";
 
-const ProductForm = () => {
+const ProductUpdatePage = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
   const {
     register,
     handleSubmit,
-    formState: { errors },
     reset,
+    formState: { errors },
   } = useForm({ resolver: zodResolver(productSchema) });
 
-  const onSubmit = async (data) => {
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const data = await getProductById(id);
+        reset(data); // đổ dữ liệu vào form
+      } catch (error) {
+        toast.error("Failed to fetch product");
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProduct();
+  }, [id, reset]);
+
+  const onSubmit = async (formData) => {
     try {
-      await createProduct(data);
-      reset("/admin/products");
-      toast.success("Add success!");
+      await updateProduct(id, formData);
+      toast.success("Update success");
+      navigate("/admin/products");
     } catch (error) {
-      toast.success("Error adding product");
-      console.error(error);
+      toast.error("Update failed");
     }
   };
 
+  if (loading) return <p>Loading...</p>;
+
   return (
     <FormCommon handleSubmit={handleSubmit(onSubmit)}>
-      <h2>Add Product</h2>
+      <h2>Update Product</h2>
       <div className="mb-3">
         <label className="form-label">Title</label>
         <input className="form-control" {...register("title")} />
@@ -47,12 +65,9 @@ const ProductForm = () => {
         <label className="form-label">Description</label>
         <input className="form-control" {...register("description")} />
       </div>
-      <button className="btn btn-primary">Add Product</button>{" "}
-      <Link className="btn btn-secondary" to={"/admin/products"}>
-        Cancel
-      </Link>
+      <button className="btn btn-primary">Update</button>
     </FormCommon>
   );
 };
 
-export default ProductForm;
+export default ProductUpdatePage;

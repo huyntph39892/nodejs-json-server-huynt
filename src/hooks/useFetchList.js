@@ -1,31 +1,28 @@
-import { useEffect, useState } from "react";
-import api from "../api";
+import { useState, useEffect, useCallback } from "react";
+import { fetchProducts } from "../api/productApi";
 
-const useFetchList = (path, query) => {
+const useFetchList = () => {
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(null);
 
-  const fetchList = async () => {
+  const fetchData = useCallback(async () => {
+    setLoading(true);
     try {
-      setLoading(true);
-      let queryString = new URLSearchParams(query).toString();
-      console.log(`${path}?${queryString}`);
-      const { data } = await api.get(`${path}?${queryString}`);
-      console.log(data);
+      const data = await fetchProducts();
       setList(data);
-      setLoading(false);
-    } catch (error) {
-      setLoading(false);
-      setError(error.message || "Failed!");
-      console.log(error);
+      setError(null);
+    } catch (err) {
+      setError(err.message);
     }
-  };
+    setLoading(false);
+  }, []);
 
   useEffect(() => {
-    fetchList();
-  }, [JSON.stringify(query)]);
-  return [list, loading, error];
+    fetchData();
+  }, [fetchData]);
+
+  return [list, loading, error, fetchData];
 };
 
 export default useFetchList;

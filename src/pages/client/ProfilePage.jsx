@@ -17,7 +17,7 @@ const ProfilePage = () => {
     };
 
     fetchProfile();
-  }, []);
+  }, [id]);
   return (
     <div>
       <h1>Profile</h1>

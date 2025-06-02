@@ -5,35 +5,38 @@ import CategoryListPage from "../pages/admin/CategoryListPage";
 import DashBoardPage from "../pages/admin/DashBoardPage";
 import OrderDetailPage from "../pages/admin/OrderDetailPage";
 import OrderListPage from "../pages/admin/OrderListPage";
+import ProductDetailPage from "../pages/admin/ProductDetailPage";
 import ProductForm from "../pages/admin/ProductForm";
 import ProductListPage from "../pages/admin/ProductListPage";
+import ProductUpdatePage from "../pages/admin/ProductUpdatePage";
 import ProfilePage from "../pages/admin/ProfilePage";
 import SettingsPage from "../pages/admin/SettingsPage";
 import UserListPage from "../pages/admin/UserListPage";
 
 const adminRoutes = [
   // *Common Routes
-  { index: true, elememt: <DashBoardPage /> },
-  { path: "settings", elememt: <SettingsPage /> },
-  { paht: "me/profile", elememt: <ProfilePage /> },
+  { index: true, element: <DashBoardPage /> },
+  { path: "settings", element: <SettingsPage /> },
+  { paht: "me/profile", element: <ProfilePage /> },
 
   //*Products and Categories Routes
-  { path: "products", elememt: <ProductListPage /> },
-  { paht: "products/add", elememt: <ProductForm /> },
-  { path: "products/edit/:id", elememt: <ProductForm /> },
-  { path: "categories", elememt: <CategoryListPage /> },
-  { path: "categories/add", elememt: <CategoryFormPage /> },
-  { path: "categories/update/:id", elememt: <CategoryFormPage /> },
+  { path: "products", element: <ProductListPage /> },
+  { path: "products/add", element: <ProductForm /> },
+  { path: "products/:id", element: <ProductDetailPage /> },
+  { path: "products/edit/:id", element: <ProductUpdatePage /> },
+  { path: "categories", element: <CategoryListPage /> },
+  { path: "categories/add", element: <CategoryFormPage /> },
+  { path: "categories/update/:id", element: <CategoryFormPage /> },
   { path: "orders/:id", element: <OrderDetailPage /> },
   { path: "orders", element: <OrderListPage /> },
 
   //*Blog Routes
-  { path: "blogs", elememt: <BlogListPage /> },
-  { path: "blogs/add", elememt: <BlogFormPage /> },
-  { path: "blogs/edit/:id", elememt: <BlogFormPage /> },
+  { path: "blogs", element: <BlogListPage /> },
+  { path: "blogs/add", element: <BlogFormPage /> },
+  { path: "blogs/edit/:id", element: <BlogFormPage /> },
 
   //*User Routes
-  { path: "users", elememt: <UserListPage /> },
+  { path: "users", element: <UserListPage /> },
 ];
 
 export default adminRoutes;
