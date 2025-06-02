@@ -1,0 +1,25 @@
+/* * {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+} */
+
+header {
+  padding: 24px 0;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  background-color: #ddd;
+  padding: 24px 0;
+  width: 30%;
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+}
