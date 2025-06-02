@@ -10,23 +10,23 @@ const router = jsonServer.router("db.json");
 setupApp();
 
 async function setupApp() {
-	const rules = auth.rewriter({
-		users: 600,
-		messages: 640,
-	});
+  const rules = auth.rewriter({
+    users: 600,
+    messages: 640,
+  });
 
-	app.db = router.db;
+  app.db = router.db;
 
-	app.use(rules);
-	app.use(cors());
-	app.use(auth);
-	app.use(router);
+  app.use(rules);
+  app.use(cors());
+  app.use(auth);
+  app.use(router);
 
-	app.get("*", (req, res) => {
-		res.status(404).send("Not Found");
-	});
+  app.get("*", (req, res) => {
+    res.status(404).send("Not Found");
+  });
 
-	app.listen(PORT, () => {
-		console.log(`http://localhost:${PORT}`);
-	});
+  app.listen(PORT, () => {
+    console.log(`http://localhost:${PORT}`);
+  });
 }
