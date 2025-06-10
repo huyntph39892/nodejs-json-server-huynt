@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { registerSchema } from "../../validations/authSchema";
 import { toast } from "react-toastify";
 import { registerApi } from "../../api/authApi";
+import Header from "../../components/Header";
 
 const RegisterPage = () => {
   const {
@@ -32,6 +33,7 @@ const RegisterPage = () => {
 
   return (
     <>
+      <Header />
       <h1>Register now!!!</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-3">

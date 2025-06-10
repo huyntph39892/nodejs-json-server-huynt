@@ -1,20 +1,20 @@
 import { useState } from "react";
 
-const initialParams = {};
-
-const useQuery = (query = initialParams) => {
-  const [params, setParams] = useState(query);
+const useQuery = (initial = {}) => {
+  const [params, setParams] = useState(initial);
 
   const resetParams = () => {
-    setParams(initialParams);
+    setParams(initial);
   };
+
   const updateParams = (query) => {
-    setParams((prevParams) => ({
-      ...prevParams,
+    setParams((prev) => ({
+      ...prev,
       ...query,
     }));
-
-    return [params, resetParams, updateParams];
   };
+
+  return [params, updateParams, resetParams];
 };
+
 export default useQuery;

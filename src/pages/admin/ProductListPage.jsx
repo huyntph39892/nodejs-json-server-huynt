@@ -33,7 +33,11 @@ const ProductListPage = () => {
           <tr>
             <th>No.</th>
             <th>Title</th>
+            <th>Image</th>
+            <th>Brand</th>
+            <th>Capacity</th>
             <th>Price</th>
+            <th>Quantity</th>
             <th>Description</th>
             <th>Action</th>
           </tr>
@@ -50,7 +54,11 @@ const ProductListPage = () => {
                   {item.title}
                 </Link>
               </td>
+              <td>{item.image}</td>
+              <td>{item.brand}</td>
+              <td>{item.capacity}</td>
               <td>{item.price}</td>
+              <td>{item.quantity}</td>
               <td>{item.description}</td>
               <td>
                 <button

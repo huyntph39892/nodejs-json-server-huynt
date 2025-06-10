@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Header from "../../components/Header";
 
 const NotFoundPage = () => {
   return (
     <>
-      <h1>Ối! Trang này không tồn tại nữa.</h1>
+      <Header />
+      <h1>Opps! Page is not found!</h1>
       <Link to="/">Go back home</Link>
     </>
   );

@@ -1,31 +1,45 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import ToggleTheme from "./ToggleTheme";
+import "./Header.css";
 
 const Header = () => {
   return (
-    <header>
-      <p>logo</p>
-      <ToggleTheme />
-      <nav>
-        <ul>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/categories">Categories👉</NavLink>
-          </li>
-          <li>
-            <NavLink to="/about">About</NavLink>
-          </li>
-          <li>
-            <NavLink to="/auth/login">Login</NavLink>
-          </li>
-          <li>
-            <NavLink to="/auth/register">Register</NavLink>
-          </li>
-        </ul>
+    <header className="header">
+      <div className="logo">AuraWord</div>
+      <nav className="nav">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? "nav-link active" : "nav-link"
+          }
+        >
+          Home
+        </NavLink>
+
+        <NavLink to="/categories" className="nav-link">
+          Shop
+        </NavLink>
+        <NavLink to="/blogs" className="nav-link">
+          Blog
+        </NavLink>
+        <NavLink to="/contact" className="nav-link">
+          Contact
+        </NavLink>
+        <NavLink to="/auth/login" className="nav-link">
+          Login
+        </NavLink>
       </nav>
+      <div className="search-cart">
+        <NavLink to="/orders" className="cart-link">
+          <i class="bi bi-cart"></i>
+        </NavLink>
+        <div className="search-box">
+          <input type="text" placeholder="Search..." />
+          <button>
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </div>
     </header>
   );
 };

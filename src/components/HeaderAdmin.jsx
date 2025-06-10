@@ -9,7 +9,7 @@ const Header = styled.header`
 const HeaderAdmin = () => {
   return (
     <Header>
-      <h1>Xin chào Admin,</h1>
+      <h1>Admin</h1>
     </Header>
   );
 };

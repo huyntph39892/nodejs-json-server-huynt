@@ -53,6 +53,21 @@ const ProductUpdatePage = () => {
         {errors.title && <p className="text-danger">{errors.title.message}</p>}
       </div>
       <div className="mb-3">
+        <label className="form-label">Brand</label>
+        <input className="form-control" {...register("brand")} />
+        {errors.brand && <p className="text-danger">{errors.brand.message}</p>}
+      </div>
+      <div className="mb-3">
+        <select className="form-select" {...register("capacity")}>
+          <option value="">Capacity</option>
+          <option value="110">110ml</option>
+          <option value="150">150ml</option>
+        </select>
+        {errors.capacity && (
+          <p className="text-danger">{errors.capacity.message}</p>
+        )}
+      </div>
+      <div className="mb-3">
         <label className="form-label">Price</label>
         <input
           className="form-control"
@@ -60,6 +75,17 @@ const ProductUpdatePage = () => {
           {...register("price", { valueAsNumber: true })}
         />
         {errors.price && <p className="text-danger">{errors.price.message}</p>}
+      </div>
+      <div className="mb-3">
+        <label className="form-label">Quantity</label>
+        <input
+          className="form-control"
+          type="number"
+          {...register("quantity", { valueAsNumber: true })}
+        />
+        {errors.quantity && (
+          <p className="text-danger">{errors.quantity.message}</p>
+        )}
       </div>
       <div className="mb-3">
         <label className="form-label">Description</label>

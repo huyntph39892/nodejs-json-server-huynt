@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { loginSchema } from "../../validations/authSchema";
 import { loginApi } from "../../api/authApi";
+import Header from "../../components/Header";
 
 const LoginPage = () => {
   const {
@@ -35,6 +36,7 @@ const LoginPage = () => {
 
   return (
     <>
+      <Header />
       <h1>Login now!!!</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-3">

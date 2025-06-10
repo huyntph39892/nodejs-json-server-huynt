@@ -20,46 +20,22 @@
   ],
   "products": [
     {
-      "title": "Samsung 8",
-      "price": 1245,
-      "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-      "id": 3
-    },
-    {
-      "id": 4,
       "title": "OPPOF19",
-      "description": "OPPO F19 is officially announced on April 2021.",
+      "brand": "Oppo",
+      "capacity": "150",
       "price": 280,
-      "discountPercentage": 17.91,
-      "rating": 4.3,
-      "stock": 123,
-      "brand": "OPPO",
-      "category": "smartphones",
-      "thumbnail": "https://cdn.dummyjson.com/product-images/4/thumbnail.jpg",
-      "images": [
-        "https://cdn.dummyjson.com/product-images/4/1.jpg",
-        "https://cdn.dummyjson.com/product-images/4/2.jpg",
-        "https://cdn.dummyjson.com/product-images/4/3.jpg",
-        "https://cdn.dummyjson.com/product-images/4/4.jpg",
-        "https://cdn.dummyjson.com/product-images/4/thumbnail.jpg"
-      ]
+      "quantity": 324,
+      "description": "hihi",
+      "id": 4
     },
     {
-      "id": 5,
       "title": "Huawei P30",
-      "description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
-      "price": 499,
-      "discountPercentage": 10.58,
-      "rating": 4.09,
-      "stock": 32,
       "brand": "Huawei",
-      "category": "smartphones",
-      "thumbnail": "https://cdn.dummyjson.com/product-images/5/thumbnail.jpg",
-      "images": [
-        "https://cdn.dummyjson.com/product-images/5/1.jpg",
-        "https://cdn.dummyjson.com/product-images/5/2.jpg",
-        "https://cdn.dummyjson.com/product-images/5/3.jpg"
-      ]
+      "capacity": "110",
+      "price": 499,
+      "quantity": 2,
+      "description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
+      "id": 5
     },
     {
       "id": 6,
@@ -393,23 +369,10 @@
       ]
     },
     {
-      "id": 24,
       "title": "cereals muesli fruit nuts",
+      "price": 50,
       "description": "original fauji cereal muesli 250gm box pack original fauji cereals muesli fruit nuts flakes breakfast cereal break fast faujicereals cerels cerel foji fouji",
-      "price": 46,
-      "discountPercentage": 16.8,
-      "rating": 4.94,
-      "stock": 113,
-      "brand": "fauji",
-      "category": "groceries",
-      "thumbnail": "https://cdn.dummyjson.com/product-images/24/thumbnail.jpg",
-      "images": [
-        "https://cdn.dummyjson.com/product-images/24/1.jpg",
-        "https://cdn.dummyjson.com/product-images/24/2.jpg",
-        "https://cdn.dummyjson.com/product-images/24/3.jpg",
-        "https://cdn.dummyjson.com/product-images/24/4.jpg",
-        "https://cdn.dummyjson.com/product-images/24/thumbnail.jpg"
-      ]
+      "id": 24
     },
     {
       "id": 25,
@@ -431,24 +394,10 @@
       ]
     },
     {
-      "id": 26,
       "title": "Plant Hanger For Home",
-      "description": "Boho Decor Plant Hanger For Home Wall Decoration Macrame Wall Hanging Shelf",
       "price": 41,
-      "discountPercentage": 17.86,
-      "rating": 4.08,
-      "stock": 131,
-      "brand": "Boho Decor",
-      "category": "home-decoration",
-      "thumbnail": "https://cdn.dummyjson.com/product-images/26/thumbnail.jpg",
-      "images": [
-        "https://cdn.dummyjson.com/product-images/26/1.jpg",
-        "https://cdn.dummyjson.com/product-images/26/2.jpg",
-        "https://cdn.dummyjson.com/product-images/26/3.jpg",
-        "https://cdn.dummyjson.com/product-images/26/4.jpg",
-        "https://cdn.dummyjson.com/product-images/26/5.jpg",
-        "https://cdn.dummyjson.com/product-images/26/thumbnail.jpg"
-      ]
+      "description": "Boho Decor Plant Hanger For Home Wall Decoration Macrame Wall Hanging Shelf",
+      "id": 26
     },
     {
       "id": 27,
@@ -545,9 +494,18 @@
     },
     {
       "title": "task 5",
-      "price": 1113,
+      "price": 111,
       "description": "s",
       "id": 34
+    },
+    {
+      "title": "dior",
+      "brand": "dior",
+      "capacity": "110",
+      "price": 1113,
+      "quantity": 60,
+      "description": "thom",
+      "id": 35
     }
   ],
   "carts": [],
